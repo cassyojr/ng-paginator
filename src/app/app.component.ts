@@ -1,5 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
-import { PaginatorComponent } from './components/paginator/paginator.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ export class AppComponent {
 
   constructor() { }
 
-  defaultPagination = {
+  defaultPagination: any = {
     page: 1,
     pageSize: 10,
     totalRecords: 50,
