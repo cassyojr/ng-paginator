@@ -1,0 +1,10 @@
+<div>
+  <app-paginator [(pagination)]="defaultPagination" (pageChange)="onPageChanged($event)"></app-paginator>
+  <p class="example"> Page: {{ defaultPagination.page }} of {{ defaultPagination.totalPages }}</p>
+</div>
+
+<div>
+  <app-paginator [(pagination)]="customPagination" [showFirst]="false" [showLast]="true"
+    (pageChange)="onPageChanged($event)"></app-paginator>
+  <p> Page: {{ customPagination.page }} of {{ customPagination.totalPages }}</p>
+</div>

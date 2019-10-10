@@ -1,0 +1,33 @@
+<ul class="paginator">
+  <li class="prev" [ngClass]="{'disabled': isFirstPage}" (click)="previousPage()">
+    <span class="prev-arrow"> {{ options.arrowPrev }} </span>
+  </li>
+
+  <ng-container *ngIf="showFirst && !hideFirstLastPages">
+    <li [ngClass]="{'disabled': isFirstPage}" (click)="goToPage(1)">1</li>
+    <li class="dots prev-dots disabled">...</li>
+  </ng-container>
+
+  <ng-container *ngFor="let item of additionalPreviousPages">
+    <li *ngIf="!isFirstPage && isValidPage(-item)" (click)="previousPage(item)">
+      {{ pagination.page - item }}
+    </li>
+  </ng-container>
+
+  <li class="page active">{{ pagination.page }}</li>
+
+  <ng-container *ngFor="let item of additionalNextPages">
+    <li *ngIf="!isLastPage && isValidPage(item)" (click)="nextPage(item)">
+      {{ pagination.page + item }}
+    </li>
+  </ng-container>
+
+  <ng-container *ngIf="showLast && !hideFirstLastPages">
+    <li class="dots next-dots disabled">...</li>
+    <li [ngClass]="{'disabled': isLastPage}" (click)="goToPage(pages)">{{ pages }}</li>
+  </ng-container>
+
+  <li class="next" [ngClass]="{'disabled': isLastPage}" (click)="nextPage()">
+    <span class="next-arrow"> {{ options.arrowNext }} </span>
+  </li>
+</ul>
