@@ -1,2 +1,2 @@
 # ng-paginator
-Angular paginator component
+Angular custom paginator component
