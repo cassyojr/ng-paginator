@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Custom Pagination for Angular
 
 Simple solution to paginate any Angular data.
